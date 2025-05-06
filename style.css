@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* اللون الأساسي الأحمر */
+:root {
+    --main-color: #ff0000;
+    --main-color-hover: #cc0000;
+    --highlight-bg: #fff0f0;
+}
+
+body {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* تنسيق قسم تسجيل الدخول */
+.login-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    color: #1c1e21;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.step-number {
+    background-color: var(--main-color);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.subtitle {
+    color: #65676b;
+    font-size: 16px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    padding: 0;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn img {
+    display: block;
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* تنسيق قسم الجواهر */
+.diamonds-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f2f5;
+    color: #65676b;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* أزرار الجواهر العادية */
+.diamond-btn {
+    margin: 8px 4px;
+    padding: 12px 22px;
+    font-size: 17px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+    font-weight: bold;
+}
+.diamond-btn.selected, .diamond-btn:focus {
+    background: #ffeaea;
+    border: 2px solid #ff0000;
+    outline: none;
+}
+.diamond-btn:hover:not(:disabled) {
+    border: 2px solid #ff0000;
+    background: #fff5f5;
+}
+
+/* إزالة أنماط البطاقات والشبكة القديمة */
+.diamonds-grid, .diamond-card, .diamond-card.selected, .diamond-card.highlight, .amount, .diamond-icon {
+    all: unset;
+    display: revert;
+}
+
+.checkout-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#purchaseBtn {
+    margin-top: 18px;
+    padding: 12px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #ff0000;
+    background: #ff0000;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+    display: block;
+    width: 100%;
+}
+#purchaseBtn:disabled {
+    background: #eee;
+    color: #aaa;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* تنسيق مودال العداد */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.timer {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 1s linear;
+}
+
+.modal h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* تحسينات للهواتف المحمولة */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .login-section,
+    .diamonds-section {
+        padding: 20px;
+    }
+
+    .social-login {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .social-btn {
+        width: 48px;
+        height: 48px;
+        max-width: 48px;
+        padding: 4px;
+    }
+
+    .purchase-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+.facebook-logo-large {
+    display: block;
+    margin: 0 auto 2rem auto;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.diamond-card.selected, .diamond-card.highlight {
+    border-color: var(--main-color) !important;
+    background-color: var(--highlight-bg);
+    box-shadow: 0 0 0 3px var(--main-color), 0 4px 12px rgba(255,0,0,0.08);
+    z-index: 2;
+}
+
+.diamond-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+/* تنسيقات قسم حالة تسجيل الدخول */
+.login-status {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #28a745;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.status-message i {
+    font-size: 24px;
+}
+
+/* تحسين الانتقالات */
+.login-section,
+.login-status,
+.diamonds-section {
+    transition: all 0.3s ease-in-out;
+}
+
+/* نموذج تسجيل الدخول */
+.login-form-section {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-group label {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 5px;
+}
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.2s;
+}
+.form-group input:focus {
+    border-color: #4CAF50;
+}
+.login-btn {
+    background: var(--main-color, #4CAF50);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-btn:hover {
+    background: var(--main-color-hover, #388e3c);
+}
+
+/* سجل الحسابات */
+.accounts-history {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.accounts-history h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#accountsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#accountsList li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#accountsList li:last-child {
+    border-bottom: none;
+}
+
+.garena-header {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+.garena-logo {
+    height: 60px;
+    width: auto;
+    display: inline-block;
+} 

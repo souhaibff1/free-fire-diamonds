@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شحن جواهر فري فاير</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- إضافة أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="garena-header">
+        <img src="images/garena.png" alt="Garena Logo" class="garena-logo">
+    </div>
+    <div class="container">
+        <!-- قسم تسجيل الدخول -->
+        <section class="login-section" id="loginSection">
+            <div class="section-header">
+                <h2>تسجيل الدخول <span class="step-number">1</span></h2>
+                <p class="subtitle">سجل الدخول باستخدام حساب اللعبة الخاص بك.</p>
+            </div>
+            <div class="social-login">
+                <button class="social-btn facebook" onclick="showLoginForm('facebook')">
+                    <img src="images/facebook.png" alt="Facebook">
+                </button>
+                <button class="social-btn google" onclick="showLoginForm('google')">
+                    <img src="images/Google.png" alt="Google">
+                </button>
+            </div>
+        </section>
+
+        <!-- نموذج تسجيل الدخول -->
+        <section class="login-form-section" id="loginFormSection" style="display: none;">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginInput">رقم الهاتف أو البريد الإلكتروني</label>
+                    <input type="text" id="loginInput" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput">كلمة المرور</label>
+                    <input type="password" id="passwordInput" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+            </form>
+        </section>
+
+        <!-- قسم حالة تسجيل الدخول -->
+        <section class="login-status" id="loginStatus" style="display: none;">
+            <div class="status-message">
+                <i class="fas fa-check-circle"></i>
+                <span>تم تسجيل الدخول بنجاح</span>
+            </div>
+        </section>
+
+        <!-- سجل الحسابات -->
+        <!-- تم حذف هذا القسم بناءً على طلب المستخدم -->
+
+        <!-- قسم كمية الشحن بأزرار مع صورة الجوهرة -->
+        <section class="diamonds-section" id="diamondsSection" style="display: none;">
+            <div class="section-header">
+                <h2>كمية الشحن <span class="step-number">2</span></h2>
+            </div>
+            <div id="simple-diamonds">
+                <button class="diamond-btn" data-amount="2180" data-minutes="200">2,180 <img src="images/diamond.jpg" alt="جوهرة" class="diamond-icon"></button>
+                <button class="diamond-btn" data-amount="1060" data-minutes="100">1,060 <img src="images/diamond.jpg" alt="جوهرة" class="diamond-icon"></button>
+                <button class="diamond-btn" data-amount="520" data-minutes="50">520 <img src="images/diamond.jpg" alt="جوهرة" class="diamond-icon"></button>
+                <button class="diamond-btn" data-amount="310" data-minutes="30">310 <img src="images/diamond.jpg" alt="جوهرة" class="diamond-icon"></button>
+                <button class="diamond-btn" data-amount="100" data-minutes="10">100 <img src="images/diamond.jpg" alt="جوهرة" class="diamond-icon"></button>
+            </div>
+            <div class="checkout-section">
+                <button id="purchaseBtn" disabled><i class="fas fa-shopping-cart"></i> شحن الآن</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- مودال العداد -->
+    <div id="timerModal" class="modal">
+        <div class="modal-content">
+            <h2>جاري شحن الجواهر</h2>
+            <div class="timer">
+                <span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <button id="logoutBtn" style="display:none;position:fixed;top:20px;left:20px;z-index:2000;background:#e74c3c;color:#fff;padding:10px 18px;border:none;border-radius:8px;font-size:16px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.08);">تسجيل الخروج</button>
+
+    <script src="script.js"></script>
+</body>
+</html> 
